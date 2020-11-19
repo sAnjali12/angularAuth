@@ -1,0 +1,84 @@
+<section id="register">
+  <div class="bwm-form">
+    <div class="row">
+      <div class="col-md-5">
+        <h1 class="page-title">Register</h1>
+        <form [formGroup]="registerForm" (ngSubmit)="register()">
+          <div class="form-group">
+            <label for="firstName">FirstName</label>
+            <input type="text"
+                   class="form-control"
+                   id="firstName"
+                   formControlName="firstName">
+            <div *ngIf="isInvalidForm('firstName')"
+                class="alert alert-danger">
+       
+                <div *ngIf="registerForm.controls['firstName'].errors.required">
+                  FirstName is required.
+                </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="lastName">LastName</label>
+            <input type="text"
+                   class="form-control"
+                   id="lastName"
+                   formControlName="lastName">
+            <div *ngIf="isInvalidForm('lastName')"
+              class="alert alert-danger">
+          
+              <div *ngIf="registerForm.controls['lastName'].errors.required">
+                LastName is required.
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email"
+                   class="form-control"
+                   id="email"
+                   formControlName="email">
+
+            <div *ngIf="isInvalidForm('email')"
+              class="alert alert-danger">
+
+              <div *ngIf="isRequired('email')">
+                  email is required.
+              </div>
+  
+              <div *ngIf="registerForm.controls['email'].errors.pattern">
+                  Must be valid email format!
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password"
+                   class="form-control"
+                   id="password"
+                   name="password"
+                   formControlName="password">
+            <div *ngIf="isInvalidForm('password')"
+                class="alert alert-danger">
+
+                <div *ngIf="isRequired('password')">
+                  Password is required.
+                </div>
+               
+              <div *ngIf="registerForm.controls['password'].errors.minlength">
+                Password must be at least 7 characters
+              </div>
+            </div>
+          </div>
+          <!-- <a type="submit"  href="http://localhost:4200/login">Submit</a>🐿 -->
+          <a routerLink="/login"><button [disabled]="!registerForm.valid" class="btn btn-bwm" > Submit </button></a>
+    
+          <!-- <button  type="submit" class="btn btn-bwm">Submit</button> -->
+          
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

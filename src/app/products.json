@@ -1,0 +1,24 @@
+{
+  "products": [
+    {
+      "name": "anjali",
+      "color": "red",
+      "id": 4
+    },
+    {
+      "name": "pen",
+      "color": "blue",
+      "id": 6
+    },
+    {
+      "name": "key",
+      "color": "black",
+      "id": 7
+    },
+    {
+      "name": "nestjs-redis",
+      "color": "red",
+      "id": 8
+    }
+  ]
+}
