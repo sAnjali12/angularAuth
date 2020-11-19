@@ -14,7 +14,7 @@
     <td>{{product.id}}</td>
     <td>{{product.name}}</td>
     <td>{{product.color}}</td>
-    <td (click) = "deleteProduct(product.id)"><a routerLink="/product">DELETE</a></td>
+    <td (click) = "deleteProduct(product.id)"><a>DELETE</a></td>
     <td><a [routerLink] = "['/updateProduct', product.id]">UPDATE</a></td>
   </tr>
 </table>
