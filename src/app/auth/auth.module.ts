@@ -10,6 +10,8 @@ import{LoginComponent} from './login/login.component'
 import { HomeComponent } from './home/home.component';
 import { ProductComponent } from './product/product.component';
 import { UpdateProductComponent } from './update-product/update-product.component'
+import { AuthService } from './auth.service'
+// import { AuthGuardService } from './auth-gaurd.service'
 
 const routes:Routes=[
     {path:'register',component:RegisterComponent},
@@ -36,8 +38,6 @@ const routes:Routes=[
     ReactiveFormsModule,
     HttpModule
   ],
-  providers: [
-    
-  ]
+  providers: [AuthService],
 })
 export class AuthModule { }

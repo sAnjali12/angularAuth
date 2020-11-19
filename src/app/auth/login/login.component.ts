@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {Router} from '@angular/router';
 
+import { AuthService, Logindata } from '../auth.service';
+
 
 @Component({
   selector: 'auth-login',
@@ -10,12 +12,17 @@ import {Router} from '@angular/router';
 })
 
 export class LoginComponent implements OnInit {
+  credentials: Logindata = {
+    email: '',
+    password: ''
+  }
 
   loginForm: FormGroup;
   errors:any[]=[];
 
   constructor(private fb: FormBuilder,
-              private router:Router) { }
+              private router:Router,
+              private auth:AuthService) { }
 
   ngOnInit() {
     this.initForm();
@@ -41,6 +48,16 @@ export class LoginComponent implements OnInit {
   }
 
   login(){
-    
+    console.log(this.credentials)
+    this.auth.login(this.credentials).subscribe(
+      ()=>{
+        this.router.navigate(['/home']);
+      },
+      err =>{
+        console.log(err)
+
+
+      }
+    )
   }
 }

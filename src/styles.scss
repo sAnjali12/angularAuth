@@ -6,8 +6,8 @@ html,body,p {
 
 .btn-bwm {
   background-color: $main-color;
-  border-color: $main-color;
-  color: white;
+  border-color: $light-gray-color;
+  color: rgb(245, 132, 132);
   padding: 15px 30px;
   font-size: 20px;
 
@@ -55,21 +55,21 @@ html,body,p {
     text-align: center;
     font-size: 42px;
     position: absolute;
-    color: #f1f1f1;
+    color: #0a0a0a;
     padding: 40px;
-    background-color: rgba(0,0,0, 0.5);
+    background-color: rgb(247, 241, 241);
     margin-top: 50px;
     letter-spacing: 1px;
   }
   .table table-bordered{
     table, th, td {
-      border: 1px solid black;
+      border: 1px solid rgb(255, 249, 249);
       font-size: 30px;
       padding: 10px;
     }
     
     from, label, input {
-      font-size: 30px;
+      font-size: 40px;
       padding: 10px;
     }
     input {
@@ -85,6 +85,7 @@ html,body,p {
       cursor: pointer;
       color: $main-color;
     }
+    
     
     
   }

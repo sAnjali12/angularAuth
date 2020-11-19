@@ -2,7 +2,7 @@
   "products": [
     {
       "name": "laptop",
-      "color": "blue",
+      "color": "gray",
       "id": 4
     },
     {
@@ -39,6 +39,11 @@
       "name": "angular-node",
       "color": "green",
       "id": 12
+    },
+    {
+      "name": "clip",
+      "color": "blue",
+      "id": 13
     }
   ]
 }

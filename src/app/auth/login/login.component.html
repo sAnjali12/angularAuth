@@ -6,10 +6,12 @@
           <form [formGroup]="loginForm" (ngSubmit)="login()">
             <div class="form-group">
               <label for="email">email</label>
-              <input type="email"
-                     class="form-control"
-                     id="email"
-                     formControlName="email">
+              <input 
+                    [(ngModel)]="credentials.email" 
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    formControlName="email">
               <div *ngIf="isInvalidForm('email')"
                 class="alert alert-danger">
   
@@ -23,13 +25,15 @@
               </div>
             </div>
             <div class="form-group">
-              <label for="password">Password</label>
-              <input type="password"
-                     class="form-control"
-                     id="password"
-                     formControlName="password">
+              <label for="password">password</label>
+              <input 
+                    [(ngModel)]="credentials.password" 
+                    type="password"
+                    class="form-control"
+                    id="password"
+                    formControlName="password">
             </div>
-            <a routerLink="/home"><button [disabled]="!loginForm.valid" class="btn btn-bwm" > Submit </button></a>
+            <button [disabled]="!loginForm.valid" class="btn btn-bwm" > Submit </button>
           </form>
         </div>
       </div>

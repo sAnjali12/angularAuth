@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
 
+import { AuthService, UserData } from '../auth.service';
+
 @Component({
   selector: 'auth-register',
   templateUrl: './register.component.html',
@@ -9,13 +11,21 @@ import {Router} from '@angular/router';
 })
 
 export class RegisterComponent implements OnInit {
+  credentials: UserData = {
+    firstName: '',
+    lastName: '',
+    email: '',
+    password: ''
+   
+  }
 
   registerForm: FormGroup;
   errors:any[]=[];
 
  
   constructor(private fb: FormBuilder,
-              private router:Router) { }
+              private router:Router,
+              private auth: AuthService) { }
 
   ngOnInit(){
     this.initForm();
@@ -40,8 +50,16 @@ export class RegisterComponent implements OnInit {
     return this.registerForm.controls[fieldName].errors.required
   }
 
-  register(){
-   
-  }  
+  register() {
+    this.auth.register(this.credentials).subscribe(
+      () => {
+        console.log(this.credentials)
+        this.router.navigateByUrl('/login')
+      },
+      err => {
+        console.error(err)
+      }
+    )
+  } 
 
 }
