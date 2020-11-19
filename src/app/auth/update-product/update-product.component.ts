@@ -12,7 +12,7 @@ import 'rxjs/add/operator/toPromise';
 export class UpdateProductComponent implements OnInit {
 
   id:number;
-  data:object = {};
+  public data:any
   products = [];
   exist = false;
   productObj:object = {};
@@ -29,7 +29,7 @@ export class UpdateProductComponent implements OnInit {
     this.http.put(url, JSON.stringify(this.productObj), {headers: this.headers})
       .toPromise()
       .then(() => {
-        this.router.navigate(['/']);
+        this.router.navigate(['/home']);
       })
   }
 

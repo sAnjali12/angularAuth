@@ -7,8 +7,8 @@
   </p>
   
   <form id = "formNewProduct" name = "formNewProduct" #productData = "ngForm" (ngSubmit) = "updateProduct(productData.value)">
-    <label>Name: </label><input type = "text" name="name" id="name" placeholder="name"  ngModel><br>
-    <label>Color: </label><input type = "text" name="color" id="color" placeholder="color" ngModel><br>
+    <label>Name: </label><input type = "text" name="name" id="name" placeholder="name" [(ngModel)] = "data.name" ngModel><br>
+    <label>Color: </label><input type = "text" name="color" id="color" [(ngModel)] = "data.color" placeholder="color" ngModel><br>
     <input type="submit" value = "Update Product">
   </form>
    

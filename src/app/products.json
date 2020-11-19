@@ -1,19 +1,44 @@
 {
   "products": [
     {
-      "name": "pen",
-      "color": "green",
+      "name": "laptop",
+      "color": "blue",
       "id": 4
     },
     {
       "name": "pen",
-      "color": "blue",
+      "color": "pink",
       "id": 6
     },
     {
       "name": "boll",
-      "color": "green",
+      "color": "yellow",
       "id": 7
+    },
+    {
+      "name": "nestjs-redis",
+      "color": "red",
+      "id": 8
+    },
+    {
+      "name": "mongo",
+      "color": "green",
+      "id": 9
+    },
+    {
+      "name": "mongo",
+      "color": "green",
+      "id": 10
+    },
+    {
+      "name": "anjali",
+      "color": "pink",
+      "id": 11
+    },
+    {
+      "name": "angular-node",
+      "color": "green",
+      "id": 12
     }
   ]
 }
